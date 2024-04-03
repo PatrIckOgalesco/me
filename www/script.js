@@ -15,6 +15,9 @@ const loadDataFromLocalstorage = () => {
     <h1>Hello, There!</h1><br>
     <div class="default-sub" id="default-sub">
         <p style="font-size: 12px;">"It's PatrIck Ogalesco – a passionate individual on a journey of exploration and creation. Explore my skills, projects, and more. Feel free to ask me anything!"</p>
+        <p style="font-size: 9px; color: blue;">
+          <a href="#" onclick="showAvailableQuestions()">See available questions to ask?</a>
+        </p>
     </div>
 
 
@@ -242,3 +245,20 @@ chatInput.addEventListener("input", () => {
 window.addEventListener('beforeunload', () => {
   // Handle cleanup before unload if needed
 });
+
+
+function showAvailableQuestions() {
+    // Define an array of available questions
+    const availableQuestions = [
+        "Hi",
+        "Tell me about yourself.",
+        "Where did you study?",
+        "What are you currently working on?",
+        "What are your skills?",
+        "\nNote: This system is programmed to respond to specific questions. If the question you want to ask is not listed here, the system may not understand it. However, feel free to ask, and I will do my best to assist you within the system's capabilities."
+    ];
+
+    // Display the available questions in a pop-up alert
+    alert("Available questions to ask:\n\n" + availableQuestions.join("\n"));
+}
+
