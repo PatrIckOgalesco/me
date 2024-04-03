@@ -15,8 +15,8 @@ const loadDataFromLocalstorage = () => {
     <h1>Hello, There!</h1><br>
     <div class="default-sub" id="default-sub">
         <p style="font-size: 12px;">"It's PatrIck Ogalesco – a passionate individual on a journey of exploration and creation. Explore my skills, projects, and more. Feel free to ask me anything!"</p>
-        <p style="font-size: 9px; color: blue;">
-          <a href="#" onclick="showAvailableQuestions()">See available questions to ask?</a>
+        <p style="font-size: 8px; color: blue;">
+            <a href="#" onclick="showAvailableQuestions()" style="text-decoration: none;">See available questions to ask?</a>
         </p>
     </div>
 
