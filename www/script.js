@@ -248,17 +248,22 @@ window.addEventListener('beforeunload', () => {
 
 
 function showAvailableQuestions() {
-    // Define an array of available questions
     const availableQuestions = [
-        "Hi",
-        "Tell me about yourself.",
-        "Where did you study?",
-        "What are you currently working on?",
-        "What are your skills?",
-        "\nNote: This system is programmed to respond to specific questions. If the question you want to ask is not listed here, the system may not understand it. However, feel free to ask, and I will do my best to assist you within the system's capabilities."
+        "- Hi | hello",
+
+        "\n- Tell me about yourself? | who are you? | Introduce yourself? | What can you tell me about your background?",
+
+        "\n- Where did you study? | tell me about your education? | what is your educational background?",
+
+        "\n- what you do? | what are you up to?",
+
+        "\n- what are your skills? | what can you do?",
+
+        "\n- how can we reach you? | what is your contact information?",
+
+        "\nNote: This system is programmed to respond to specific questions. If the question you want to ask is not listed here, the system may not understand it. Thank you for understanding!"
     ];
 
-    // Display the available questions in a pop-up alert
     alert("Available questions to ask:\n\n" + availableQuestions.join("\n"));
 }
 
