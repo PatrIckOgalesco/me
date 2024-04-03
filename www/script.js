@@ -56,7 +56,7 @@ const displayAnswerWithTypingEffect = async (answer) => {
   const responseText = document.querySelector(".incoming:last-child p");
   for (let i = 0; i < answer.length; i++) {
     responseText.innerHTML = answer.substring(0, i + 1); // Use innerHTML here
-    await sleep(50);
+    await sleep(20);
   }
 };
 
