@@ -13,6 +13,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Fira Code', monospace;
+  font-size: 12px;
 
 }
 
@@ -29,6 +30,33 @@
 body {
   background: var(--outgoing-chat-bg);
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: right;
+  }
+
+.topnav p {
+  font-size: 5px;
+  color: blue;
+  margin: 0;
+  padding: 8px;
+  }
+
+.topnav a {
+  text-decoration: none;
+  color: blue;
+  font-size: 10px;
+  }
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  }
 
 .typing-textarea {
   position: relative;
@@ -652,4 +680,3 @@ span.material-symbols-rounded {
     align-items: center;
   }
 }
-
