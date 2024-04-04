@@ -14,10 +14,7 @@ const loadDataFromLocalstorage = () => {
   const defaultText = `<div class="default-text"><br><br>
     <h1>Hello, There!</h1><br>
     <div class="default-sub" id="default-sub">
-        <p style="font-size: 12px;">"It's PatrIck Ogalesco – a passionate individual on a journey of exploration and creation. Explore my skills, projects, and more. Feel free to ask me anything!"</p>
-        <p style="font-size: 8px; color: blue;">
-            <a href="#" onclick="showAvailableQuestions()" style="text-decoration: none;">| See available questions to ask?</a>
-        </p>
+        <p style="font-size: 12px;">"It's John PatrIck Ogalesco – a passionate individual on a journey of exploration and creation. Explore my skills, projects, and more. Feel free to ask me anything!"</p>
     </div>
 
 
@@ -56,7 +53,7 @@ const displayAnswerWithTypingEffect = async (answer) => {
   const responseText = document.querySelector(".incoming:last-child p");
   for (let i = 0; i < answer.length; i++) {
     responseText.innerHTML = answer.substring(0, i + 1); // Use innerHTML here
-    await sleep(20);
+    await sleep(10);
   }
 };
 
@@ -83,19 +80,23 @@ const handleOutgoingChat = async () => {
   switch (question) {
   case 'hi':
   case 'hello':
-    const greetingResponse = "Hi there! How can I assist you?";
-    // Use typing-text animation function instead of direct HTML response
-    displayAnswerWithTypingEffect(greetingResponse);
-    break; // Add the missing semicolon here
+  const greetingResponse = `
+    \nHello there! It's an absolute pleasure to greet you! Welcome to our interactive chat platform. How may I be of service to you today? Whether you have questions, need assistance, or simply want to chat, I'm here to help in any way I can. Feel free to explore and engage with me, and together, let's make your experience as enjoyable and informative as possible!
+  `;
+  displayAnswerWithTypingEffect(greetingResponse);
+  break;
+
+
   case 'Tell me about yourself.':
   case 'who are you?':
   case 'Introduce yourself.':
   case 'What can you tell me about your background?':
 
     const aboutMeResponse = `
-      I am Patrick Ogalesco, 24 years old, an aspiring digital artist, boasting a unique fusion of technical prowess and artistic finesse. 
-      Currently, I am passionately pursuing a BSc in Computer Science, immersing myself not only in the realm of coding and programming but also dedicating myself fervently to the canvas as an artist. <br><br>
-      My journey seamlessly weaves together creativity and logic, charting a course toward innovative problem-solving and the creation of visually breathtaking solutions. Fueled by an innate curiosity and an unwavering commitment to bridging the gap between art and technology, I am poised to inject a fresh perspective into the world of digital art.
+      \nAllow me to introduce myself. I am John Patrick Ogalesco, a 24-year-old with a unique fusion of technical prowess and artistic finesse.  
+
+      \nCurrently, I am passionately pursuing a BSc in Computer Science, immersing myself not only in the realm of coding and programming but also dedicating myself fervently to the canvas as an artist. <br><br>
+      \nMy journey seamlessly weaves together creativity and logic, charting a course toward innovative problem-solving and the creation of visually breathtaking solutions. Fueled by an innate curiosity and an unwavering commitment to bridging the gap between art and technology, I am poised to inject a fresh perspective into the world of digital art.
     `;
     displayAnswerWithTypingEffect(aboutMeResponse);
     break;
@@ -103,12 +104,13 @@ const handleOutgoingChat = async () => {
     case 'where did you study?':
     case 'tell me about your education':
     case 'what is your educational background?':
+
     const educationResponse = `
-    Here is a summary of my educational journey:
-    - Christian Polytechnic Institute Of Catanduanes (2021 - 2024)
-    - Catanduanes College (2020 - 2021)
-    - San Jose(OCO) National High School (2014 - 2020)
-    - Sagrada Viga Catanduanes (2008 - 2013)
+    \nHere is a summary of my educational journey:
+    \n- Christian Polytechnic Institute Of Catanduanes (2021 - 2024)
+    \n- Catanduanes College (2020 - 2021)
+    \n- San Jose(OCO) National High School (2014 - 2020)
+    \n- Sagrada Viga Catanduanes (2008 - 2013)
   `;
   displayAnswerWithTypingEffect(educationResponse);
   break;
@@ -130,24 +132,36 @@ const handleOutgoingChat = async () => {
   // displayAnswerWithTypingEffect(portfolioResponse);
   // break;
 
+  case 'portfolio':
+  case 'show me your work':
+
+  const portfolioResponse = `
+      \nI'm sorry, but the administrator has not uploaded any work yet
+
+
+      \n....Coming Soon! 
+  `;
+  displayAnswerWithTypingEffect(portfolioResponse);
+  break;
+
 
 
   case "what you do":
   case 'what are you up to?':
 
-  const doingResponse = `Here's an overview of what I'm currently engaged in:
+  const doingResponse = `\nHere's an overview of what I'm currently engaged in:
 
-Web Design
-- Currently in the process of learning.
+      \nWeb Design
+      \n- Currently in the process of learning.
 
-Web Development
-- Currently in the process of learning.
+      \nWeb Development
+      \n- Currently in the process of learning.
 
-Android Development
-- Currently in the process of learning.
+      \nAndroid Development
+      \n- Currently in the process of learning.
 
-Digital Art
-- Currently in the process of learning.`;
+      \nDigital Art
+      \n- Currently in the process of learning.`;
   displayAnswerWithTypingEffect(doingResponse);
   break;
 
@@ -156,55 +170,106 @@ Digital Art
   case 'what can you do?':
 
   const skillsResponse = `
-    As a versatile individual with a passion for both technology and creativity, here are some of my key skills:
+    \nAs a versatile individual with a passion for both technology and creativity, here are some of my key skills:
 
-    - Digital Art
-    - Programming
-    - Web Development
-    - Artistic Vision
-    - Collaboration
-    - Adaptability
-    - Attention to Details
-    - Continuous Learning
+    \n- Digital Art
+    \n- Programming
+    \n- Web Development
+    \n- Artistic Vision
+    \n- Collaboration
+    \n- Adaptability
+    \n- Attention to Details
+    \n- Continuous Learning
 
-    I specialize in various skills that contribute to my expertise in the field. Here are some of my key areas:
-    - Photoshop
-    - Ibis Paint
-    - Krita
-    - HTML And CSS
-    - JavaScript
-    - PHP
-    - C
-    - C++
-    - JAVA
-    - Visual Basic
-    - Microsoft Application
+    \nI specialize in various skills that contribute to my expertise in the field. Here are some of my key areas:
+    \n- Photoshop
+    \n- Ibis Paint
+    \n- Krita
+    \n- HTML And CSS
+    \n- JavaScript
+    \n- PHP
+    \n- C
+    \n- C++
+    \n- JAVA
+    \n- Visual Basic
+    \n- Microsoft Application
   `;
   displayAnswerWithTypingEffect(skillsResponse);
   break;
 
+
   case 'how can we reach you?':
   case 'what is your contact information?':
     const contactResponse = `
-      Thank you for reaching out! Feel free to contact me through the following:
+      \nThank you for reaching out! You can contact me through the following channels:
       
-      Email: jpatrickogalesco@gmail.com
+      \nEmail: jpatrickogalesco@gmail.com
+      \nPhone: 0938 070 ****
+      \nLocation: Viga Catanduanes
 
-      Phone: 0938 070 ****
-
-      Location: Viga Catanduanes
+      \nSocial Media:
+      \nFacebook: <a href="https://www.facebook.com/profile.php?id=100078646130852" target="_blank">Facebook Profile</a>
+      \nLinkedIn: <a href="https://www.linkedin.com/in/patrickogalesco" target="_blank">LinkedIn Profile</a>
     `;
     displayAnswerWithTypingEffect(contactResponse);
     break;
 
+  case 'job experience':
+  case 'do you have any job experience?':
+    const jobExperienceResponse = `
+      \nAs of now, I don't possess any formal job experience. However, I firmly believe that my passion for learning and my commitment to excellence compensate for my lack of formal work history. I am a motivated individual who thrives on challenges and is eager to immerse myself in various professional environments to gain valuable experience. 
 
+      \nDespite not having job experience, I have actively engaged in self-directed projects, academic pursuits, and extracurricular activities, all of which have contributed to my skill set and personal growth. I approach every task with dedication and a desire to learn, and I am confident in my ability to adapt quickly to new roles and responsibilities.
 
+      \nWhile I may not have a traditional job background, I am enthusiastic about the prospect of applying my knowledge and skills to real-world scenarios. I am open to opportunities that allow me to contribute meaningfully to a team, develop professionally, and make a positive impact on any organization I join.
 
-
-  default:
-    const defaultResponse = "I'm sorry, I didn't understand that. My responses are generated based on programmed commands.";
-    displayAnswerWithTypingEffect(defaultResponse);
+      \nIn summary, while I may not have job experience in the conventional sense, I am a proactive and ambitious individual ready to embark on a fulfilling professional journey and make valuable contributions to any team or project I become a part of.
+    `;
+    displayAnswerWithTypingEffect(jobExperienceResponse);
     break;
+
+
+
+  case 'question':
+    const questionResponse = `
+        "\n- Hi | Hello",
+
+        "\n- Tell me about yourself? | Who are you? | Introduce yourself? | What can you tell me about your background?",
+
+        "\n- Where did you study? | Tell me about your education? | What is your educational background?",
+
+        "\n- What are you currently working on? | What are you up to?",
+
+        "\n- What are your skills? | What can you do?",
+
+        "\n- porfolio | show me your work?",
+
+        "\n- job experience | case 'do you have any job experience?",
+
+        "\n- How can we reach you? | What is your contact information?"
+    `;
+    displayAnswerWithTypingEffect(questionResponse);
+    break;
+
+
+
+
+
+
+default:
+  const defaultResponse = "I'm sorry, I didn't understand that. My responses are generated based on programmed commands." +
+    "\n\n\nHere the questions you can ask: " +
+    "\n\n- Hi | Hello" +
+    "\n\n- Tell me about yourself? | Who are you? | Introduce yourself? | What can you tell me about your background?" +
+    "\n\n- Where did you study? | Tell me about your education? | What is your educational background?" +
+    "\n\n- What are you currently working on? | What are you up to?" +
+    "\n\n- What are your skills? | What can you do?" +
+    "\n\n- Portfolio | Show me your work?" +
+    "\n\n- job experience | case 'do you have any job experience?" +
+    "\n\n- How can we reach you? | What is your contact information?";
+  displayAnswerWithTypingEffect(defaultResponse);
+  break;
+
 }
 
 };
@@ -249,7 +314,7 @@ window.addEventListener('beforeunload', () => {
 
 function showAvailableQuestions() {
     const availableQuestions = [
-        "- Hi | hello",
+        "\n- Hi | hello",
 
         "\n- Tell me about yourself? | who are you? | Introduce yourself? | What can you tell me about your background?",
 
@@ -259,6 +324,10 @@ function showAvailableQuestions() {
 
         "\n- what are your skills? | what can you do?",
 
+        "\n- porfolio | show me your work?",
+
+        "\n- job experience | case 'do you have any job experience?",
+
         "\n- how can we reach you? | what is your contact information?",
 
         "\nNote: This system is programmed to respond to specific questions. If the question you want to ask is not listed here, the system may not understand it. Thank you for understanding!"
@@ -266,4 +335,3 @@ function showAvailableQuestions() {
 
     alert("Available questions to ask:\n\n" + availableQuestions.join("\n"));
 }
-
