@@ -9,7 +9,7 @@ let predictiveTextOptions = [
 "Introduce yourself.",
 "What can you tell me about your background?",
 
-"Where did you study?",
+"where did you study?",
 "Tell me about your education.",
 "What is your educational background?",
 
@@ -18,6 +18,14 @@ let predictiveTextOptions = [
 
 "what you do",
 "what are you up to?",
+
+"job experience",
+"case 'do you have any job experience?",
+
+"porfolio",
+"show me your work?",
+
+"question",
 ];
 predictiveTextOptions.sort();
 
@@ -69,5 +77,3 @@ const clearSuggestion = () => {
 };
 
 sendButton.style.display = "block";
-
-
