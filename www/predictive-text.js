@@ -22,7 +22,7 @@ let predictiveTextOptions = [
 "job experience",
 "case 'do you have any job experience?",
 
-"porfolio",
+"portfolio",
 "show me your work?",
 
 "question",
