@@ -9,7 +9,7 @@ let predictiveTextOptions = [
 "Introduce yourself.",
 "What can you tell me about your background?",
 
-"where did you study?",
+"Where did you study?",
 "Tell me about your education.",
 "What is your educational background?",
 
@@ -77,3 +77,5 @@ const clearSuggestion = () => {
 };
 
 sendButton.style.display = "block";
+
+

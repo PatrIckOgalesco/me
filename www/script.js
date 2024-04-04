@@ -335,3 +335,4 @@ function showAvailableQuestions() {
 
     alert("Available questions to ask:\n\n" + availableQuestions.join("\n"));
 }
+

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
 
-  const phrases = ["Programmer", "Digital Artist", "Coder"];
+  const phrases = ["Programmer", "Digital Artist", "Coder", "UI Designer"];
   const el = document.getElementById("typewriter");
 
   let sleepTime = 100;
