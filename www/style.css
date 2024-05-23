@@ -42,21 +42,21 @@ body {
 
 .topnav p {
   font-size: 5px;
-  color: blue;
+  color: black;
   margin: 0;
   padding: 8px;
   }
 
 .topnav a {
   text-decoration: none;
-  color: blue;
+  color: #000000;
   font-size: 10px;
   }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-  }
+/*.topnav a:hover {
+  background-color: none;
+  color: blue;
+  }*/
 
 .typing-textarea {
   position: relative;
@@ -159,7 +159,7 @@ body {
     position: fixed;
     right: 0;
 /*    z-index: 1;*/
-    z-index: -1;
+    z-index: 1;
     width: auto;
     height: 50%;
     opacity: 92%;

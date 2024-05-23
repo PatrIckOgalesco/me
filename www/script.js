@@ -17,6 +17,8 @@ const loadDataFromLocalstorage = () => {
         <p style="font-size: 12px;">"It's John PatrIck Ogalesco – a passionate individual on a journey of exploration and creation. Explore my skills, projects, and more. Feel free to ask me anything!"</p>
     </div>
 
+ <img src="www/images/pic.png" alt="pic" id="img1">
+
 
     <div id="default-sub2">
         <p style="font-size: 12px;">I am <span id="typewriter"></span><span id="cursor">|</span></p>
@@ -88,9 +90,7 @@ const handleOutgoingChat = async () => {
 
 
   case 'Tell me about yourself.':
-  case 'who are you?':
-  case 'Introduce yourself.':
-  case 'What can you tell me about your background?':
+  // case 'Introduce yourself.':
 
     const aboutMeResponse = `
       \nAllow me to introduce myself. I am John Patrick Ogalesco, a 24-year-old with a unique fusion of technical prowess and artistic finesse.  
@@ -101,9 +101,8 @@ const handleOutgoingChat = async () => {
     displayAnswerWithTypingEffect(aboutMeResponse);
     break;
 
-    case 'where did you study?':
+
     case 'tell me about your education':
-    case 'what is your educational background?':
 
     const educationResponse = `
     \nHere is a summary of my educational journey:
@@ -132,7 +131,7 @@ const handleOutgoingChat = async () => {
   // displayAnswerWithTypingEffect(portfolioResponse);
   // break;
 
-  case 'portfolio':
+
   case 'show me your work':
 
   const portfolioResponse = `
@@ -145,8 +144,6 @@ const handleOutgoingChat = async () => {
   break;
 
 
-
-  case "what you do":
   case 'what are you up to?':
 
   const doingResponse = `\nHere's an overview of what I'm currently engaged in:
@@ -167,7 +164,6 @@ const handleOutgoingChat = async () => {
 
 
   case 'what are your skills?':
-  case 'what can you do?':
 
   const skillsResponse = `
     \nAs a versatile individual with a passion for both technology and creativity, here are some of my key skills:
@@ -199,7 +195,6 @@ const handleOutgoingChat = async () => {
 
 
   case 'how can we reach you?':
-  case 'what is your contact information?':
     const contactResponse = `
       \nThank you for reaching out! You can contact me through the following channels:
       
@@ -214,7 +209,6 @@ const handleOutgoingChat = async () => {
     displayAnswerWithTypingEffect(contactResponse);
     break;
 
-  case 'job experience':
   case 'do you have any job experience?':
     const jobExperienceResponse = `
       \nAs of now, I don't possess any formal job experience. However, I firmly believe that my passion for learning and my commitment to excellence compensate for my lack of formal work history. I am a motivated individual who thrives on challenges and is eager to immerse myself in various professional environments to gain valuable experience. 
@@ -234,19 +228,19 @@ const handleOutgoingChat = async () => {
     const questionResponse = `
         "\n- Hi | Hello",
 
-        "\n- Tell me about yourself? | Who are you? | Introduce yourself? | What can you tell me about your background?",
+        "\n- Tell me about yourself?,
 
-        "\n- Where did you study? | Tell me about your education? | What is your educational background?",
+        "\n- Tell me about your education?,
 
-        "\n- What are you currently working on? | What are you up to?",
+        "\n- What are you up to?",
 
-        "\n- What are your skills? | What can you do?",
+        "\n- What are your skills?,
 
-        "\n- porfolio | show me your work?",
+        "\n- show me your work?",
 
-        "\n- job experience | case 'do you have any job experience?",
+        "\n- do you have any job experience?",
 
-        "\n- How can we reach you? | What is your contact information?"
+        "\n- How can we reach you?"
     `;
     displayAnswerWithTypingEffect(questionResponse);
     break;
@@ -257,16 +251,7 @@ const handleOutgoingChat = async () => {
 
 
 default:
-  const defaultResponse = "I'm sorry, I didn't understand that. My responses are generated based on programmed commands." +
-    "\n\n\nHere the questions you can ask: " +
-    "\n\n- Hi | Hello" +
-    "\n\n- Tell me about yourself? | Who are you? | Introduce yourself? | What can you tell me about your background?" +
-    "\n\n- Where did you study? | Tell me about your education? | What is your educational background?" +
-    "\n\n- What are you currently working on? | What are you up to?" +
-    "\n\n- What are your skills? | What can you do?" +
-    "\n\n- Portfolio | Show me your work?" +
-    "\n\n- job experience | case 'do you have any job experience?" +
-    "\n\n- How can we reach you? | What is your contact information?";
+  const defaultResponse = "I'm sorry, I didn't understand that. My responses are generated based on programmed commands.";
   displayAnswerWithTypingEffect(defaultResponse);
   break;
 
@@ -315,21 +300,13 @@ window.addEventListener('beforeunload', () => {
 function showAvailableQuestions() {
     const availableQuestions = [
         "\n- Hi | hello",
-
-        "\n- Tell me about yourself? | who are you? | Introduce yourself? | What can you tell me about your background?",
-
-        "\n- Where did you study? | tell me about your education? | what is your educational background?",
-
-        "\n- what you do? | what are you up to?",
-
-        "\n- what are your skills? | what can you do?",
-
-        "\n- porfolio | show me your work?",
-
-        "\n- job experience | case 'do you have any job experience?",
-
-        "\n- how can we reach you? | what is your contact information?",
-
+        "\n- Tell me about yourself?",
+        "\n- tell me about your education?",
+        "\n- what are you up to?",
+        "\n- what are your skills?",
+        "\n- show me your work?",
+        "\n- do you have any job experience?",
+        "\n- how can we reach you?",
         "\nNote: This system is programmed to respond to specific questions. If the question you want to ask is not listed here, the system may not understand it. Thank you for understanding!"
     ];
 

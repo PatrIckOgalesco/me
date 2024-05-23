@@ -2,27 +2,17 @@
 // Array of predictive text options---------------suggestion forn js
 let predictiveTextOptions = [
 "How can we reach you?",
-"What is your contact information?",
 
 "Tell me about yourself.",
-"Who are you?",
-"Introduce yourself.",
-"What can you tell me about your background?",
 
-"Where did you study?",
-"Tell me about your education.",
 "What is your educational background?",
 
 "what are your skills?",
-"what can you do?",
 
-"what you do",
 "what are you up to?",
 
-"job experience",
-"case 'do you have any job experience?",
+"do you have any job experience?",
 
-"portfolio",
 "show me your work?",
 
 "question",
