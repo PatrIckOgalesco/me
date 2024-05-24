@@ -89,11 +89,11 @@ const handleOutgoingChat = async () => {
   break;
 
 
-  case 'Tell me about yourself.':
+  case 'tell me about yourself.':
   // case 'Introduce yourself.':
 
     const aboutMeResponse = `
-      \nAllow me to introduce myself. I am John Patrick Ogalesco, a 24-year-old with a unique fusion of technical prowess and artistic finesse.  
+      \nAllow me to introduce myself. I am John Patrick Ogalesco, a 2*-year-old with a unique fusion of technical prowess and artistic finesse.  
 
       \nCurrently, I am passionately pursuing a BSc in Computer Science, immersing myself not only in the realm of coding and programming but also dedicating myself fervently to the canvas as an artist. <br><br>
       \nMy journey seamlessly weaves together creativity and logic, charting a course toward innovative problem-solving and the creation of visually breathtaking solutions. Fueled by an innate curiosity and an unwavering commitment to bridging the gap between art and technology, I am poised to inject a fresh perspective into the world of digital art.
@@ -102,7 +102,7 @@ const handleOutgoingChat = async () => {
     break;
 
 
-    case 'tell me about your education':
+    case 'what is your educational background?':
 
     const educationResponse = `
     \nHere is a summary of my educational journey:
@@ -132,7 +132,7 @@ const handleOutgoingChat = async () => {
   // break;
 
 
-  case 'show me your work':
+  case 'show me your work?':
 
   const portfolioResponse = `
       \nI'm sorry, but the administrator has not uploaded any work yet
@@ -226,21 +226,21 @@ const handleOutgoingChat = async () => {
 
   case 'question':
     const questionResponse = `
-        "\n- Hi | Hello",
+        \n- "Hi | Hello",
 
-        "\n- Tell me about yourself?,
+        \n- "Tell me about yourself?,
 
-        "\n- Tell me about your education?,
+        \n- "Tell me about your education?,
 
-        "\n- What are you up to?",
+        \n- "What are you up to?",
 
-        "\n- What are your skills?,
+        \n- "What are your skills?,
 
-        "\n- show me your work?",
+        \n- "Show me your work?",
 
-        "\n- do you have any job experience?",
+        \n- "Do you have any job experience?",
 
-        "\n- How can we reach you?"
+        \n- "How can we reach you?"
     `;
     displayAnswerWithTypingEffect(questionResponse);
     break;
