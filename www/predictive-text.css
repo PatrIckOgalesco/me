@@ -1,12 +1,12 @@
 #suggestion {
   background: #353535; 
-  text-align: center; /* Center-align the text */
-  padding: 5px 10px; /* Adjust padding as needed */
-  border-radius: 5px; /* Add rounded corners */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  width: fit-content; /* Set the width to fit the content */
+  text-align: center; 
+  padding: 5px 10px;
+  border-radius: 5px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+  width: fit-content; 
   color: var(--text-color); 
-/*  opacity: 90%;*/
+  font-size: 12px;
 }
 
 /* Position the suggestion above the textarea/prompts */
@@ -19,13 +19,19 @@
   justify-content: center; /* Center horizontally */
 }
 
-/* Mobile view styles for the suggestion span */
-/*@media screen and (max-width: 600px) {
-  .suggestion-container {
-    position: absolute;
-    top: -300px;
-    left: 0;
-    right: 0;
-  }
+
+.suggestion-item {
+  margin-bottom: 10px; /* Add space between suggestions */
+  padding: 5px; /* Add padding for better clickability */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background: #454545; /* Slightly different background for visibility */
+  border-radius: 3px; /* Rounded corners for suggestion items */
 }
-*/
+
+.suggestion-item:last-child {
+  margin-bottom: 0; /* Remove margin from the last item */
+}
+
+.suggestion-item:hover {
+  background: #555555; /* Change background on hover */
+}

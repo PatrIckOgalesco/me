@@ -31,7 +31,7 @@ body {
   background: var(--outgoing-chat-bg);
 }
 
-.topnav {
+/*.topnav {
   overflow: hidden;
   background-color: none;
   position: fixed;
@@ -51,7 +51,7 @@ body {
   text-decoration: none;
   color: #000000;
   font-size: 10px;
-  }
+  }*/
 
 /*.topnav a:hover {
   background-color: none;
@@ -92,6 +92,7 @@ body {
   margin-right: 20px; 
   margin-bottom: 16px; 
   color: var(--text-color);
+  font-size: 15px;
 }
 
 #delete-btn {
@@ -462,11 +463,11 @@ span.material-symbols-rounded {
 /* For screens with a width less than or equal to 600px (small screens) */
 @media screen and (max-width: 600px) {
   #default-sub2 {
-   position: fixed;
-   bottom: 25%;
-   padding-right: 25px;
-}
-  #default-sub{
+    position: fixed;
+    bottom: 25%;
+    padding-right: 25px;
+  }
+  #default-sub {
     padding-right: 20px;
     overflow-x: auto;
     font-weight: normal;
@@ -474,70 +475,53 @@ span.material-symbols-rounded {
   .default-text h1 {
     font-size: 1.9rem;
   }
-
   :where(textarea, .chat p) {
     font-size: 12px;
   }
-
-  /*:where(.default-text p, textarea, .chat p) {
-    font-size: 12px;
-  }*/
-  .default-text p{
+  .default-text p {
     font-size: 1rem;
   }
-
   .chat-container .chat {
     padding: 20px 10px;
   }
-
   .chat-container .chat img {
     height: 32px;
     width: 32px;
   }
-
   .chat-container .chat p {
     padding: 0 25px 0 0;
   }
   .chat-details p {
-    padding: 0 25px 0 25px;
-}
-  .chat-details p {
-/*    margin-left: 25px !important;*/
-}
-
+    padding: 0 25px;
+  }
   .chat .chat-content:not(:has(.typing-animation), :has(.error)) span {
     visibility: visible;
   }
-
   .typing-container {
     padding: 15px 20px;
   }
-
   .typing-textarea textarea {
-/*    height: 50px;*/
     padding: 10px 40px 10px 10px;
   }
-
   .typing-content span {
     height: 55px;
     width: 55px;
     margin-left: 5px;
   }
-
   span.material-symbols-rounded {
     font-size: 1.25rem;
   }
   img.resize-image {
-  width: 100%;
-  height: auto;
-}
+    width: 100%;
+    height: 100%;
+  }
 }
 
-/* For screens with a width between 600px and 1200px (medium screens) */
+/* For screens with a width between 601px and 1200px (medium screens) */
 @media screen and (min-width: 601px) and (max-width: 1200px) {
-  #default-sub2{
-   position: fixed;
-   padding-top: 250px;
+  #default-sub2 {
+    position: fixed;
+    padding-top: 250px;
   }
   .default-text h1 {
     font-size: 2.8rem;
@@ -545,10 +529,10 @@ span.material-symbols-rounded {
   :where(.default-text p, textarea, .chat p) {
     font-size: 14px;
   }
-  #smart{
-   font-size: 4rem;
+  #smart {
+    font-size: 4rem;
   }
-  .default-text p{
+  .default-text p {
     font-size: 1.2rem;
   }
   .default-text {
@@ -557,35 +541,28 @@ span.material-symbols-rounded {
   .chat-container .chat {
     padding: 25px 100px;
   }
-
   .chat-container .chat img {
     height: 36px;
     width: 36px;
   }
-
   .chat-container .chat p {
     padding: 0 5px;
   }
-
   .chat .chat-content:not(:has(.typing-animation), :has(.error)) span {
     visibility: visible;
   }
-
   .typing-container {
     padding: 15px 100px;
   }
-
   .typing-textarea textarea {
     height: 60px;
     padding: 12px 45px 12px 12px;
   }
-
   .typing-content span {
     height: 60px;
     width: 60px;
     margin-left: 8px;
   }
-
   span.material-symbols-rounded {
     font-size: 1.35rem;
   }
@@ -594,60 +571,53 @@ span.material-symbols-rounded {
 /* For screens with a width greater than 1200px (large screens) */
 @media screen and (min-width: 1201px) {
   #default-sub2 {
-   position: fixed;
-   padding-top: 14%;
-   padding-right: 35px;
-}
+    position: fixed;
+    padding-top: 14%;
+    padding-right: 35px;
+  }
   #img1 {
     height: 70%;
-}
-  #theme-btn{
+  }
+  #theme-btn {
     margin-right: 30px;
   }
-  #smart{
-   font-size: 60px;
+  #smart {
+    font-size: 60px;
   }
   .default-text h1 {
     font-size: 3.3rem;
   }
-
   :where(.default-text, textarea, .chat p) {
     font-size: 16px;
   }
-
-  .default-text p{
+  #Portfolio {
+    height: 100%;
+    width: 100%;
+  }
+  .default-text p {
     font-size: 18px;
   }
   .default-text {
     padding: 0 160px;
-
+  }
   .chat-container .chat {
     padding: 30px 150px !important;
   }
-
   .chat-container .chat p {
-    padding: 0 0;
+    padding: 0;
   }
-
   .chat .chat-content:not(:has(.typing-animation), :has(.error)) span {
     visibility: visible;
   }
-
- /* .typing-container {
-    padding: 15px 160px;
-  }*/
-
   .typing-textarea textarea {
     height: 70px;
     padding: 15px 50px 15px 15px;
   }
-
   .typing-content span {
     height: 70px;
     width: 70px;
     margin-left: 10px;
   }
-
   span.material-symbols-rounded {
     font-size: 1.5rem;
   }
@@ -665,18 +635,47 @@ span.material-symbols-rounded {
     margin: 0 auto;
   }
   .chat-details .image-container img {
-        max-width: 40%;
-        height: auto;
-        float: left; /* Float the image to the left */
-        margin: 0 20px 20px 0; /* Adjust the margins to create space around the image */
-    }
-
-    .chat-details p {
-        margin: 0; /* Reset the margin for paragraphs to avoid extra spacing */
-    }
+    height: auto;
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+  .chat-details p {
+    margin: 0;
+  }
   .chat-details iframe {
-    max-width: 100%; /* Limit the width on larger screens if needed */
-    margin: 0 auto; /* Center the iframe horizontally */
+    max-width: 100%;
+    margin: 0 auto;
     align-items: center;
   }
+}
+
+/* For screens with a width greater than 2560px (4K screens) */
+@media screen and (min-width: 2561px) {
+  .wrapper {
+    padding: 0 320px; /* Adjust padding to center content */
+  }
+  .container {
+    max-width: 1920px; /* Adjust as needed */
+    width: 100%;
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  .typing-container {
+    padding: 0 660px;
+    width: 100%;
+  }
+  .img1 {
+    margin: auto;
+    margin-top: 20px;
+  }
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px; /* Adjust the padding as needed */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }

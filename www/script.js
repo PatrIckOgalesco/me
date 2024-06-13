@@ -14,15 +14,13 @@ const loadDataFromLocalstorage = () => {
   const defaultText = `<div class="default-text"><br><br>
     <h1>Hello, There!</h1><br>
     <div class="default-sub" id="default-sub">
-        <p style="font-size: 12px;">"It's John PatrIck Ogalesco – a passionate individual on a journey of exploration and creation. Explore my skills, projects, and more. Feel free to ask me anything!"</p>
+        <p style="font-size: 12px;">"It's John Patrick Ogalesco – a passionate individual on a journey of exploration and creation. Explore my skills, projects, and more. Feel free to ask!"</p>
     </div>
 
- <img src="www/images/pic.png" alt="pic" id="img1">
-
+    <img src="www/images/pic.png" alt="pic" id="img1">
 
     <div id="default-sub2">
         <p style="font-size: 12px;">I am <span id="typewriter"></span><span id="cursor">|</span></p>
-    </div>
     </div>
   </div>`;
   
@@ -41,21 +39,30 @@ const displayAnswerWithTypingEffect = async (answer) => {
   const answerHtml = `<div class="chat-content">
     <div class="chat-details">
       <img src="www/images/chatbot3.jpg" alt="chatbot-img">
-      <p>${answer}</p>
+      <div class="response-text">${answer}</div>
     </div>
   </div>`;
 
   const incomingChatDiv = document.createElement("div");
   incomingChatDiv.classList.add("chat", "incoming");
-  incomingChatDiv.innerHTML = answerHtml; // Use innerHTML here
+  incomingChatDiv.innerHTML = answerHtml;
 
   chatContainer.appendChild(incomingChatDiv);
   chatContainer.scrollTo(0, chatContainer.scrollHeight);
 
-  const responseText = document.querySelector(".incoming:last-child p");
-  for (let i = 0; i < answer.length; i++) {
-    responseText.innerHTML = answer.substring(0, i + 1); // Use innerHTML here
-    await sleep(10);
+  const responseText = incomingChatDiv.querySelector(".response-text");
+
+  let i = 0;
+  while (i < answer.length) {
+    const char = answer[i];
+    if (char === "<") {
+      const tagEnd = answer.indexOf(">", i);
+      i = tagEnd + 1;
+    } else {
+      responseText.innerHTML = answer.substring(0, i + 1);
+      await sleep(10);
+      i++;
+    }
   }
 };
 
@@ -80,183 +87,151 @@ const handleOutgoingChat = async () => {
   const question = userText.toLowerCase();
 
   switch (question) {
-  case 'hi':
-  case 'hello':
-  const greetingResponse = `
-    \nHello there! It's an absolute pleasure to greet you! Welcome to our interactive chat platform. How may I be of service to you today? Whether you have questions, need assistance, or simply want to chat, I'm here to help in any way I can. Feel free to explore and engage with me, and together, let's make your experience as enjoyable and informative as possible!
-  `;
-  displayAnswerWithTypingEffect(greetingResponse);
-  break;
+    case 'hi':
+    case 'hello':
+      const greetingResponse = `
+        Hello there! It's an absolute pleasure to greet you! Welcome to our interactive chat platform. How may I be of service to you today? Whether you have questions, need assistance, or simply want to chat, I'm here to help in any way I can. Feel free to explore and engage with me, and together, let's make your experience as enjoyable and informative as possible!
+      `;
+      displayAnswerWithTypingEffect(greetingResponse);
+      break;
 
-
-  case 'tell me about yourself.':
-  // case 'Introduce yourself.':
-
-    const aboutMeResponse = `
-      \nAllow me to introduce myself. I am John Patrick Ogalesco, a 2*-year-old with a unique fusion of technical prowess and artistic finesse.  
-
-      \nCurrently, I am passionately pursuing a BSc in Computer Science, immersing myself not only in the realm of coding and programming but also dedicating myself fervently to the canvas as an artist. <br><br>
-      \nMy journey seamlessly weaves together creativity and logic, charting a course toward innovative problem-solving and the creation of visually breathtaking solutions. Fueled by an innate curiosity and an unwavering commitment to bridging the gap between art and technology, I am poised to inject a fresh perspective into the world of digital art.
-    `;
-    displayAnswerWithTypingEffect(aboutMeResponse);
-    break;
-
+    case 'tell me about yourself.':
+      const aboutMeResponse = `
+        Allow me to introduce myself. I am John Patrick Ogalesco, a 2*-year-old aspiring concept artist with a boundless imagination and an insatiable passion for bringing fantastical worlds to life.  
+        While I'm currently pursuing a BSc in Computer Science, my heart truly belongs to the realm of visual storytelling and creative expression. <br><br>
+        My journey is a vibrant tapestry of colors and concepts, blending technical proficiency with artistic flair to craft immersive and captivating narratives. Fueled by a relentless drive to push the boundaries of imagination, I am dedicated to honing my craft and sharing my vision with the world.
+      `;
+      displayAnswerWithTypingEffect(aboutMeResponse);
+      break; 
 
     case 'what is your educational background?':
+      const educationResponse = `
+        Here is a summary of my educational journey:
+        <ul>
+          <li>Christian Polytechnic Institute Of Catanduanes (2021 - 2024)</li>
+          <li>Catanduanes College (2020 - 2021)</li>
+          <li>San Jose(OCO) National High School (2014 - 2020)</li>
+          <li>Sagrada Viga Catanduanes (2008 - 2013)</li>
+        </ul>
+      `;
+      displayAnswerWithTypingEffect(educationResponse);
+      break;
 
-    const educationResponse = `
-    \nHere is a summary of my educational journey:
-    \n- Christian Polytechnic Institute Of Catanduanes (2021 - 2024)
-    \n- Catanduanes College (2020 - 2021)
-    \n- San Jose(OCO) National High School (2014 - 2020)
-    \n- Sagrada Viga Catanduanes (2008 - 2013)
-  `;
-  displayAnswerWithTypingEffect(educationResponse);
-  break;
-  
-
-  // case 'portfolio':
-  // case 'show me your work':
-
-  // const portfolioResponse = `
-  //   <img src="www/images/SimpleDrawingAppJS.png" id="Portfolio">
-  //   Here is an example of my work. I created this piece during my exploration of digital art.
-
-  //   <img src="www/images/SimpleDrawingAppJS.png" id="Portfolio">
-  //   Another project in my portfolio. This showcases my skills in web development.
-
-  //   <img src="www/images/SimpleDrawingAppJS.png" id="Portfolio">
-  //   Here's a snapshot of a coding project I worked on. It involves a mix of frontend and backend technologies.
-  // `;
-  // displayAnswerWithTypingEffect(portfolioResponse);
-  // break;
-
-
-  case 'show me your work?':
-
-  const portfolioResponse = `
-      \nI'm sorry, but the administrator has not uploaded any work yet
-
-
-      \n....Coming Soon! 
-  `;
-  displayAnswerWithTypingEffect(portfolioResponse);
-  break;
-
-
-  case 'what are you up to?':
-
-  const doingResponse = `\nHere's an overview of what I'm currently engaged in:
-
-      \nWeb Design
-      \n- Currently in the process of learning.
-
-      \nWeb Development
-      \n- Currently in the process of learning.
-
-      \nAndroid Development
-      \n- Currently in the process of learning.
-
-      \nDigital Art
-      \n- Currently in the process of learning.`;
-  displayAnswerWithTypingEffect(doingResponse);
-  break;
+    case 'show me your work?':
+      const portfolioResponse = `
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (1).png" id="Portfolio" alt="Portfolio Image 2" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (2).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (3).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (4).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (5).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (6).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (7).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (8).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (9).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (10).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/lol (11).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      `;
+      displayAnswerWithTypingEffect(portfolioResponse);
+      break;
 
 
-  case 'what are your skills?':
+    case 'what are you up to?':
+      const doingResponse = `
+        Here's an overview of what I'm currently engaged in:
+        <ul>
+          <li>Web Development - Passionately diving into the world of web development.</li>
+          <li>Concept Art - Enthusiastically exploring the depths of concept art.</li>
+        </ul>
 
-  const skillsResponse = `
-    \nAs a versatile individual with a passion for both technology and creativity, here are some of my key skills:
+      `;
+      displayAnswerWithTypingEffect(doingResponse);
+      break;
 
-    \n- Digital Art
-    \n- Programming
-    \n- Web Development
-    \n- Artistic Vision
-    \n- Collaboration
-    \n- Adaptability
-    \n- Attention to Details
-    \n- Continuous Learning
+    case 'what are your skills?':
+      const skillsResponse = `
+        As a versatile individual with a passion for both technology and creativity, here are some of my key skills:
+        <ul>
+          <li>Digital Art</li>
+          <li>Programming</li>
+          <li>Web Development</li>
+          <li>Artistic Vision</li>
+          <li>Collaboration</li>
+          <li>Adaptability</li>
+          <li>Attention to Details</li>
+          <li>Continuous Learning</li>
+        </ul>
+        I specialize in various skills that contribute to my expertise in the field. Here are some of my key areas:
+        <ul>
+          <li>Photoshop</li>
+          <li>Ibis Paint</li>
+          <li>Krita</li>
+          <li>HTML And CSS</li>
+          <li>JavaScript</li>
+          <li>PHP</li>
+          <li>C</li>
+          <li>C++</li>
+          <li>JAVA</li>
+          <li>Visual Basic</li>
+          <li>Microsoft Application</li>
+        </ul>
+      `;
+      displayAnswerWithTypingEffect(skillsResponse);
+      break;
 
-    \nI specialize in various skills that contribute to my expertise in the field. Here are some of my key areas:
-    \n- Photoshop
-    \n- Ibis Paint
-    \n- Krita
-    \n- HTML And CSS
-    \n- JavaScript
-    \n- PHP
-    \n- C
-    \n- C++
-    \n- JAVA
-    \n- Visual Basic
-    \n- Microsoft Application
-  `;
-  displayAnswerWithTypingEffect(skillsResponse);
-  break;
+    case 'how can we reach you?':
+      const contactResponse = `
+        Thank you for reaching out! You can contact me through the following channels:
+        <ul>
+          <li>Email: jpatrickogalesco@gmail.com</li>
+          <li>Phone: 0938 070 ****</li>
+          <li>Location: Viga Catanduanes</li>
+        </ul>
+        Social Media:
+        <ul>
+          <li>Facebook: <a href="https://www.facebook.com/profile.php?id=100078646130852" target="_blank">Facebook Profile</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/patrickogalesco" target="_blank">LinkedIn Profile</a></li>
+        </ul>
+      `;
+      displayAnswerWithTypingEffect(contactResponse);
+      break;
 
+    case 'do you have any job experience?':
+      const jobExperienceResponse = `
+        As of now, I don't possess any formal job experience. However, I firmly believe that my passion for learning and my commitment to excellence compensate for my lack of formal work history. I am a motivated individual who thrives on challenges and is eager to immerse myself in various professional environments to gain valuable experience.<br><br>
+        Despite not having job experience, I have actively engaged in self-directed projects, academic pursuits, and extracurricular activities, all of which have contributed to my skill set and personal growth. I approach every task with dedication and a desire to learn, and I am confident in my ability to adapt quickly to new roles and responsibilities.<br><br>
+        While I may not have a traditional job background, I am enthusiastic about the prospect of applying my knowledge and skills to real-world scenarios. I am open to opportunities that allow me to contribute meaningfully to a team, develop professionally, and make a positive impact on any organization I join.
+        In summary, while I may not have job experience in the conventional sense, I am a proactive and ambitious individual ready to embark on a fulfilling professional journey and make valuable contributions to any team or project I become a part of.
+      `;
+      displayAnswerWithTypingEffect(jobExperienceResponse);
+      break;
 
-  case 'how can we reach you?':
-    const contactResponse = `
-      \nThank you for reaching out! You can contact me through the following channels:
-      
-      \nEmail: jpatrickogalesco@gmail.com
-      \nPhone: 0938 070 ****
-      \nLocation: Viga Catanduanes
-
-      \nSocial Media:
-      \nFacebook: <a href="https://www.facebook.com/profile.php?id=100078646130852" target="_blank">Facebook Profile</a>
-      \nLinkedIn: <a href="https://www.linkedin.com/in/patrickogalesco" target="_blank">LinkedIn Profile</a>
-    `;
-    displayAnswerWithTypingEffect(contactResponse);
-    break;
-
-  case 'do you have any job experience?':
-    const jobExperienceResponse = `
-      \nAs of now, I don't possess any formal job experience. However, I firmly believe that my passion for learning and my commitment to excellence compensate for my lack of formal work history. I am a motivated individual who thrives on challenges and is eager to immerse myself in various professional environments to gain valuable experience. 
-
-      \nDespite not having job experience, I have actively engaged in self-directed projects, academic pursuits, and extracurricular activities, all of which have contributed to my skill set and personal growth. I approach every task with dedication and a desire to learn, and I am confident in my ability to adapt quickly to new roles and responsibilities.
-
-      \nWhile I may not have a traditional job background, I am enthusiastic about the prospect of applying my knowledge and skills to real-world scenarios. I am open to opportunities that allow me to contribute meaningfully to a team, develop professionally, and make a positive impact on any organization I join.
-
-      \nIn summary, while I may not have job experience in the conventional sense, I am a proactive and ambitious individual ready to embark on a fulfilling professional journey and make valuable contributions to any team or project I become a part of.
-    `;
-    displayAnswerWithTypingEffect(jobExperienceResponse);
-    break;
-
-
-
-  case 'question':
-    const questionResponse = `
-        \n- "Hi | Hello",
-
-        \n- "Tell me about yourself?,
-
-        \n- "Tell me about your education?,
-
-        \n- "What are you up to?",
-
-        \n- "What are your skills?,
-
-        \n- "Show me your work?",
-
-        \n- "Do you have any job experience?",
-
-        \n- "How can we reach you?"
-    `;
-    displayAnswerWithTypingEffect(questionResponse);
-    break;
-
-
-
-
-
-
-default:
-  const defaultResponse = "I'm sorry, I didn't understand that. My responses are generated based on programmed commands.";
-  displayAnswerWithTypingEffect(defaultResponse);
-  break;
-
-}
-
+    default:
+      const defaultResponse = "I'm sorry, I didn't understand that. My responses are generated based on programmed commands.";
+      displayAnswerWithTypingEffect(defaultResponse);
+      break;
+  }
 };
 
 const deleteChats = () => {
@@ -295,21 +270,3 @@ chatInput.addEventListener("input", () => {
 window.addEventListener('beforeunload', () => {
   // Handle cleanup before unload if needed
 });
-
-
-function showAvailableQuestions() {
-    const availableQuestions = [
-        "\n- Hi | hello",
-        "\n- Tell me about yourself?",
-        "\n- tell me about your education?",
-        "\n- what are you up to?",
-        "\n- what are your skills?",
-        "\n- show me your work?",
-        "\n- do you have any job experience?",
-        "\n- how can we reach you?",
-        "\nNote: This system is programmed to respond to specific questions. If the question you want to ask is not listed here, the system may not understand it. Thank you for understanding!"
-    ];
-
-    alert("Available questions to ask:\n\n" + availableQuestions.join("\n"));
-}
-
