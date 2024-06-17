@@ -98,7 +98,7 @@ const handleOutgoingChat = async () => {
     case 'tell me about yourself.':
       const aboutMeResponse = `
         <div style="width: 100%; height: auto;">
-          <img src="www/images/pic1.png" id="Portfolio" alt="Portfolio Image 2" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="www/images/pic3.jpg" id="Portfolio" alt="Portfolio Image 2" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         Allow me to introduce myself. I am John Patrick Ogalesco, a 2*-year-old aspiring Tech Artist with a boundless imagination and an insatiable passion for bringing fantastical worlds to life.  
         While I'm currently pursuing a BSc in Computer Science, my heart truly belongs to the realm of visual storytelling and creative expression. <br><br>
@@ -108,7 +108,7 @@ const handleOutgoingChat = async () => {
       break; 
 
     case 'what is your educational background?':
-      const educationResponse = `
+    const educationResponse = `
         Here is a summary of my educational journey:
         <ul>
           <li>Christian Polytechnic Institute Of Catanduanes (2021 - 2024)</li>
@@ -119,6 +119,7 @@ const handleOutgoingChat = async () => {
       `;
       displayAnswerWithTypingEffect(educationResponse);
       break;
+
 
   case 'show me your work?':
   const portfolioResponse = `
@@ -163,21 +164,29 @@ const handleOutgoingChat = async () => {
 
 
     case 'show me your certification?':
-      const certification = `
-      <div class="portfolio-container">
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/mygreatlearning.jpg" id="Portfolio" alt="Portfolio Image 2" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/cisco.png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/mygretlearningCSS.jpg" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        </div>
-      `;
-      displayAnswerWithTypingEffect(certification);
-      break;
+  const certification = `
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img src="www/images/mygreatlearning.jpg" id="Portfolio" alt="Certification Image 1">
+        <p>Completed the Great Learning online course in Front End Development - HTML.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/cisco.png" id="Portfolio" alt="Certification Image 2">
+        <p>Achieved Cisco Certified Network Associate (CCNA) certification.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/mygretlearningCSS.jpg" id="Portfolio" alt="Certification Image 3">
+        <p>Successfully completed the Great Learning online course in Front End Development - CSS.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/nc.jpg" id="Portfolio" alt="Certification Image 3">
+        <p>Successfully completed the TESDA course in Computer Syetem Servicing NC.</p>
+      </div>
+    </div>
+  `;
+  displayAnswerWithTypingEffect(certification);
+  break;
+
 
 
     case 'what are you up to?':
@@ -241,14 +250,21 @@ const handleOutgoingChat = async () => {
       break;
 
     case 'do you have any job experience?':
-      const jobExperienceResponse = `
-        As of now, I don't possess any formal job experience. However, I firmly believe that my passion for learning and my commitment to excellence compensate for my lack of formal work history. I am a motivated individual who thrives on challenges and is eager to immerse myself in various professional environments to gain valuable experience.<br><br>
-        Despite not having job experience, I have actively engaged in self-directed projects, academic pursuits, and extracurricular activities, all of which have contributed to my skill set and personal growth. I approach every task with dedication and a desire to learn, and I am confident in my ability to adapt quickly to new roles and responsibilities.<br><br>
-        While I may not have a traditional job background, I am enthusiastic about the prospect of applying my knowledge and skills to real-world scenarios. I am open to opportunities that allow me to contribute meaningfully to a team, develop professionally, and make a positive impact on any organization I join.
-        In summary, while I may not have job experience in the conventional sense, I am a proactive and ambitious individual ready to embark on a fulfilling professional journey and make valuable contributions to any team or project I become a part of.
-      `;
-      displayAnswerWithTypingEffect(jobExperienceResponse);
-      break;
+  const jobExperienceResponse = `
+    As of now, I don't possess any formal job experience. However, I firmly believe that my passion for learning and my commitment to excellence compensate for my lack of formal work history. I am a motivated individual who thrives on challenges and is eager to immerse myself in various professional environments to gain valuable experience.<br><br>
+    Despite not having job experience, I have actively engaged in self-directed projects, academic pursuits, and extracurricular activities, all of which have contributed to my skill set and personal growth. I approach every task with dedication and a desire to learn, and I am confident in my ability to adapt quickly to new roles and responsibilities.<br><br>
+    While I may not have a traditional job background, I am enthusiastic about the prospect of applying my knowledge and skills to real-world scenarios. I am open to opportunities that allow me to contribute meaningfully to a team, develop professionally, and make a positive impact on any organization I join.
+    In summary, while I may not have job experience in the conventional sense, I am a proactive and ambitious individual ready to embark on a fulfilling professional journey and make valuable contributions to any team or project I become a part of.<br><br>
+    <strong>Job Experience:</strong><br>
+    - (CSS) Computer System Serving Trainer: Teaching senior high school CSS strand in 40 days.
+    <br>- Computer Assembly
+    <br>- Networking
+    <br>- Server Configuration
+  `;
+  displayAnswerWithTypingEffect(jobExperienceResponse);
+  break;
+
+
 
     default:
       const defaultResponse = "I'm sorry, I didn't understand that. My responses are generated based on programmed commands.";
