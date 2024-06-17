@@ -177,7 +177,7 @@ body {
     top: 0;
 }*/
 #Portfolio{
-  height: 200px;
+  height: auto;
   width: 100%;
 }
 #smart {
@@ -591,7 +591,7 @@ span.material-symbols-rounded {
     font-size: 16px;
   }
   #Portfolio {
-    height: 100%;
+    height: auto;
     width: 100%;
   }
   .default-text p {
@@ -679,3 +679,74 @@ span.material-symbols-rounded {
   padding: 0 20px; /* Adjust the padding as needed */
   box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
+
+
+
+
+/*.portfolio-container {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 10px;
+  width: 100%;
+}
+
+.portfolio-item {
+  width: 100%;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 769px) {
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+*/
+
+
+
+/* General styles for the portfolio container */
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Add some space between items */
+}
+
+/* Styles for each portfolio item */
+.portfolio-item {
+  flex: 1 1 calc(33.333% - 32px); /* Default to three items per row with some margin */
+  max-width: calc(33.333% - 32px); /* Ensures items do not grow too big */
+  box-sizing: border-box; 
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; 
+}
+.portfolio-item:hover img {
+  transform: scale(1.2); 
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Media query for smaller screens (tablets) */
+@media (max-width: 768px) {
+  .portfolio-item {
+    flex: 1 1 calc(50% - 16px); /* Two items per row */
+    max-width: calc(50% - 16px);
+  }
+}
+
+/* Media query for even smaller screens (mobile) */
+@media (max-width: 480px) {
+  .portfolio-item {
+    flex: 1 1 100%; /* One item per row */
+    max-width: 100%;
+  }
+}
+

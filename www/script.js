@@ -97,7 +97,10 @@ const handleOutgoingChat = async () => {
 
     case 'tell me about yourself.':
       const aboutMeResponse = `
-        Allow me to introduce myself. I am John Patrick Ogalesco, a 2*-year-old aspiring concept artist with a boundless imagination and an insatiable passion for bringing fantastical worlds to life.  
+        <div style="width: 100%; height: auto;">
+          <img src="www/images/pic1.png" id="Portfolio" alt="Portfolio Image 2" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        Allow me to introduce myself. I am John Patrick Ogalesco, a 2*-year-old aspiring Tech Artist with a boundless imagination and an insatiable passion for bringing fantastical worlds to life.  
         While I'm currently pursuing a BSc in Computer Science, my heart truly belongs to the realm of visual storytelling and creative expression. <br><br>
         My journey is a vibrant tapestry of colors and concepts, blending technical proficiency with artistic flair to craft immersive and captivating narratives. Fueled by a relentless drive to push the boundaries of imagination, I am dedicated to honing my craft and sharing my vision with the world.
       `;
@@ -117,43 +120,63 @@ const handleOutgoingChat = async () => {
       displayAnswerWithTypingEffect(educationResponse);
       break;
 
-    case 'show me your work?':
-      const portfolioResponse = `
+  case 'show me your work?':
+  const portfolioResponse = `
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img src="www/images/lol (1).png" id="Portfolio" alt="Portfolio Image 1">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (2).png" id="Portfolio" alt="Portfolio Image 2">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (3).png" id="Portfolio" alt="Portfolio Image 3">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (4).png" id="Portfolio" alt="Portfolio Image 4">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (5).png" id="Portfolio" alt="Portfolio Image 5">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (6).png" id="Portfolio" alt="Portfolio Image 6">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (7).png" id="Portfolio" alt="Portfolio Image 7">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (8).png" id="Portfolio" alt="Portfolio Image 8">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (9).png" id="Portfolio" alt="Portfolio Image 9">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (10).png" id="Portfolio" alt="Portfolio Image 10">
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/lol (11).png" id="Portfolio" alt="Portfolio Image 11">
+      </div>
+    </div>
+  `;
+  displayAnswerWithTypingEffect(portfolioResponse);
+  break;
+
+
+    case 'show me your certification?':
+      const certification = `
+      <div class="portfolio-container">
         <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (1).png" id="Portfolio" alt="Portfolio Image 2" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="www/images/mygreatlearning.jpg" id="Portfolio" alt="Portfolio Image 2" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (2).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="www/images/cisco.png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (3).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="www/images/mygretlearningCSS.jpg" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (4).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (5).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (6).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (7).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (8).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (9).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (10).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="width: 100%; height: auto;">
-          <img src="www/images/lol (11).png" id="Portfolio" alt="Portfolio Image 3" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
       `;
-      displayAnswerWithTypingEffect(portfolioResponse);
+      displayAnswerWithTypingEffect(certification);
       break;
 
 
