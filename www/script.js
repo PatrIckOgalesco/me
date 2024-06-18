@@ -179,11 +179,11 @@ const handleOutgoingChat = async () => {
         <p>Successfully completed the Great Learning online course in Front End Development - CSS.</p>
       </div>
       <div class="portfolio-item">
-        <img src="www/images/JavaScript_Essentials_1.jpg" id="Portfolio" alt="Certification Image 3">
+        <img src="www/images/JavaScript_Essentials_1.jpg" id="Portfolio" alt="Certification Image 4">
         <p>Successfully completed the JavaScript Essentials 1 course, provided by Cisco Networking Academy in collaboration with OpenEDG JS Institute.</p>
       </div>
       <div class="portfolio-item">
-        <img src="www/images/nc.jpg" id="Portfolio" alt="Certification Image 3">
+        <img src="www/images/nc.jpg" id="Portfolio" alt="Certification Image 5">
         <p>Successfully completed the TESDA course in Computer Syetem Servicing NC.</p>
       </div>
     </div>
