@@ -1,4 +1,4 @@
-const chatInput = document.querySelector("#chat-input");
+okconst chatInput = document.querySelector("#chat-input");
 const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
 const deleteButton = document.querySelector("#delete-btn");
@@ -177,6 +177,10 @@ const handleOutgoingChat = async () => {
       <div class="portfolio-item">
         <img src="www/images/mygretlearningCSS.jpg" id="Portfolio" alt="Certification Image 3">
         <p>Successfully completed the Great Learning online course in Front End Development - CSS.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/JavaScript_Essentials_1.jpg" id="Portfolio" alt="Certification Image 3">
+        <p>Successfully completed the JavaScript Essentials 1 course, provided by Cisco Networking Academy in collaboration with OpenEDG JS Institute.</p>
       </div>
       <div class="portfolio-item">
         <img src="www/images/nc.jpg" id="Portfolio" alt="Certification Image 3">
