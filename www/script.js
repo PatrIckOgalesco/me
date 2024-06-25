@@ -167,6 +167,14 @@ const handleOutgoingChat = async () => {
   const certification = `
     <div class="portfolio-container">
       <div class="portfolio-item">
+        <img src="www/images/John Patrick O. Ogalesco _certificate.jpg" id="Portfolio" alt="Certification Image 1">
+        <p>Participating in the University of the Philippines Technology Management Center and Department of Information and Communications Technology's webinar entitled, "AI-gnite: Exploring the Role of AI for Economic Growth and Innovation".</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="www/images/JOHN PATRICK O. OGALESCO.jpg" id="Portfolio" alt="Certification Image 1">
+        <p>Participating in the "Cybersecurity Awareness Capacity: Social Engineering and Ethical Hacking" of the Department of Information and Communications Technology.</p>
+      </div>
+      <div class="portfolio-item">
         <img src="www/images/mygreatlearning.jpg" id="Portfolio" alt="Certification Image 1">
         <p>Completed the Great Learning online course in Front End Development - HTML.</p>
       </div>
